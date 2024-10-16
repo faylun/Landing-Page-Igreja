@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Igreja XYZ</title>
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo à Igreja Amar</h1>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre Nós</a></li>
+                <li><a href="#eventos">Eventos</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="slider">
+        </section>
+        <section id="sobre">
+            <h2>Sobre Nós</h2>
+            <p>Descrição da igreja...</p>
+        </section>
+        <section id="eventos">
+            <h2>Eventos</h2>
+            <div class="evento">
+                <span class="evento-titulo">Culto</span>
+                <span class="evento-info"><i class="fa fa-calendar"></i> Domingo - 19h</span>
+            </div>
+            <div class="evento">
+                <span class="evento-titulo">Pequeno Grupo</span>
+                <span class="evento-info"><i class="fa fa-calendar"></i> Quarta-Feira - 20h</span>
+            </div>
+        </section>
+        
+        <section id="slider">
+            <div class="slider-wrapper">
+                <div class="slide">
+                    <img src="foto-igreja01.jpeg" alt="Imagem da Igreja">
+                    <p class="descricao">Santa Ceia</p>
+                </div>
+                <div class="slide">
+                    <img src="foto-igreja02.jpeg" alt="Imagem da Igreja">
+                    <p class="descricao">Natal</p>
+                </div>
+                <div class="slide">
+                    <img src="foto-igreja03.jpeg" alt="Imagem da Igreja">
+                    <p class="descricao">Culto de Domingo</p>
+                </div>
+
+                <div class="slide">
+                    <img src="foto-igreja04.jpeg" alt="Imagem da Igreja">
+                    <p class="descricao">Culto de Domingo</p>
+                </div>
+
+                <div class="slide">
+                    <img src="foto-igreja05.jpeg" alt="Imagem da Igreja">
+                    <p class="descricao">Testemunho</p>
+                </div>
+            </div>
+        </section>
+        <section id="contato">
+            <h2>Contato</h2>
+            <form>
+                <input type="text" placeholder="Seu Nome" required>
+                <input type="email" placeholder="Seu Email" required>
+                <textarea placeholder="Sua Mensagem" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Igreja Amar</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
