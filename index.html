@@ -3,79 +3,330 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Igreja Amar</title>
+    <meta name="description" content="Igreja Amar - Uma comunidade acolhedora dedicada à fé e ao amor ao próximo">
+    <title>Igreja Amar | Comunidade de Fé</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #dc3545;
+            --primary-dark: #c82333;
+            --primary-light: #ef5665;
+        }
+        
+        .navbar {
+            background-color: var(--primary-color) !important;
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .hero {
+            height: 600px;
+            overflow: hidden;
+        }
+        
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .value-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border: 1px solid #dee2e6;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+        }
+        
+        .value-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .event-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border: 1px solid #dee2e6;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .event-card i {
+            color: var(--primary-color);
+        }
+        
+        .footer {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        .social-icon {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            color: var(--primary-light);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+        }
+
+        .text-primary {
+            color: var(--primary-color) !important;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Bem-vindo à Igreja Amar</h1>
-        <nav>
-            <ul>
-                <li><a href="#sobre">Sobre Nós</a></li>
-                <li><a href="#eventos">Eventos</a></li>
-                <li><a href="#galeria">Galeria</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="slider">
-        </section>
-        <section id="sobre">
-            <h2>Sobre Nós</h2>
-            <p>Descrição da igreja...</p>
-        </section>
-        <section id="eventos">
-            <h2>Eventos</h2>
-            <div class="evento">
-                <span class="evento-titulo">Culto</span>
-                <span class="evento-info"><i class="fa fa-calendar"></i> Domingo - 19h</span>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Igreja Amar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Sobre Nós</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#eventos">Eventos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#galeria">Galeria</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contato">Contato</a>
+                    </li>
+                </ul>
             </div>
-            <div class="evento">
-                <span class="evento-titulo">Pequeno Grupo</span>
-                <span class="evento-info"><i class="fa fa-calendar"></i> Quarta-Feira - 20h</span>
-            </div>
-        </section>
-        
-        <section id="slider">
-            <div class="slider-wrapper">
-                <div class="slide">
-                    <img src="foto-igreja01.jpeg" alt="Imagem da Igreja">
-                    <p class="descricao">Santa Ceia</p>
-                </div>
-                <div class="slide">
-                    <img src="foto-igreja02.jpeg" alt="Imagem da Igreja">
-                    <p class="descricao">Natal</p>
-                </div>
-                <div class="slide">
-                    <img src="foto-igreja03.jpeg" alt="Imagem da Igreja">
-                    <p class="descricao">Culto de Domingo</p>
-                </div>
+        </div>
+    </nav>
 
-                <div class="slide">
-                    <img src="foto-igreja04.jpeg" alt="Imagem da Igreja">
-                    <p class="descricao">Culto de Domingo</p>
+    <!-- Hero Section com Slider -->
+    <section class="hero">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="foto-igreja01.jpeg" alt="Nossa Comunidade">
                 </div>
-
-                <div class="slide">
-                    <img src="foto-igreja05.jpeg" alt="Imagem da Igreja">
-                    <p class="descricao">Testemunho</p>
+                <div class="swiper-slide">
+                    <img src="foto-igreja02.jpeg" alt="Nossa Comunidade">
+                </div>
+                <div class="swiper-slide">
+                    <img src="foto-igreja03.jpeg" alt="Nossa Comunidade">
+                </div>
+                <div class="swiper-slide">
+                    <img src="foto-igreja04.jpeg" alt="Nossa Comunidade">
+                </div>
+                <div class="swiper-slide">
+                    <img src="foto-igreja05.jpeg" alt="Nossa Comunidade">
                 </div>
             </div>
-        </section>
-        <section id="contato">
-            <h2>Contato</h2>
-            <form>
-                <input type="text" placeholder="Seu Nome" required>
-                <input type="email" placeholder="Seu Email" required>
-                <textarea placeholder="Sua Mensagem" required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Igreja Amar</p>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Sobre Nós</h2>
+            <p class="lead text-center mb-5">
+                Bem-vindo à Igreja Amar, uma comunidade dedicada ao amor, à fé e ao serviço. 
+                Nossa missão é criar um ambiente acolhedor onde todos possam crescer espiritualmente 
+                e encontrar apoio em sua jornada de fé.
+            </p>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="value-card">
+                        <i class="fas fa-heart"></i>
+                        <h3>Amor</h3>
+                        <p>Amamos a Deus e ao próximo incondicionalmente</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="value-card">
+                        <i class="fas fa-hands-helping"></i>
+                        <h3>Serviço</h3>
+                        <p>Servimos nossa comunidade com dedicação</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="value-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Comunidade</h3>
+                        <p>Unidos em propósito e fé</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eventos Section -->
+    <section id="eventos" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Eventos</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card event-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-church fa-3x mb-3 text-primary"></i>
+                            <h3 class="card-title">Culto de Celebração</h3>
+                            <p class="card-text">
+                                <i class="far fa-clock"></i> Domingo - 19h
+                            </p>
+                            <p class="card-text">
+                                <i class="fas fa-map-marker-alt"></i> Templo Principal
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Adicione mais eventos aqui -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contato" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Entre em Contato</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="contact-info p-4 bg-light rounded">
+                        <h3 class="mb-4">Informações de Contato</h3>
+                        <p><i class="fas fa-map-marker-alt me-2"></i> Rua da Igreja, 123 - Cidade</p>
+                        <p><i class="fas fa-phone me-2"></i> (11) 1234-5678</p>
+                        <p><i class="fas fa-envelope me-2"></i> contato@igrejaamar.com</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <form id="contactForm" class="p-4 bg-light rounded">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Mensagem</label>
+                            <textarea class="form-control" id="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <h3>Igreja Amar</h3>
+                    <p>Uma comunidade de fé e amor</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <hr class="my-4">
+            <p class="text-center mb-0">&copy; 2024 Igreja Amar. Todos os direitos reservados.</p>
+        </div>
     </footer>
-    <script src="script.js"></script>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            effect: "fade",
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            loop: true,
+        });
+    </script>
 </body>
 </html>
